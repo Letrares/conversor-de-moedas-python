@@ -77,22 +77,6 @@ if __name__ == "__main__":
             break
         print("Moeda inválida. Por favor, tente novamente ou digite 'LISTA'.")
 
-    valor_a_converter = float(input(f"Digite o valor em {moeda_origem} a ser convertido: "))
-    print("\nA obter as taxas de câmbio em tempo real...")
-    taxas = obter_taxas_de_cambio(moeda_origem)
-
-    if taxas:
-        taxa_de_conversao = taxas.get(moeda_destino)
-        if taxa_de_conversao:
-            valor_convertido = valor_a_converter * taxa_de_conversao
-            print("\n" + "-" * 11, " RESULTADO ", "-" * 11)
-            print(f"{valor_a_converter} {moeda_origem} equivalem a {valor_convertido:.2f} {moeda_destino}")
-            print("-" * 35)
-        else:
-            print(f"Erro: A moeda de destino '{moeda_destino}' não foi encontrada.")
-    else:
-        print("\nNão foi possível realizar a conversão. Verifique os erros acima.")
-
     # Valor que será convertido
     valor_a_converter = float(input(f"Digite o valor em {moeda_origem} a ser convertido: "))
 
